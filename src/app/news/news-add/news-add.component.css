@@ -1,0 +1,161 @@
+/* Estilo general del formulario */
+.form-style {
+    background-color: white;
+    margin-left: 25px;
+}
+
+/* Estilo para etiquetas */
+label {
+    font-size: 16px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+    margin-bottom: 0.75rem;
+}
+
+h1 {
+    margin-top: 2rem;
+    font-size: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 2rem;
+}
+
+/* Estilo para los inputs y selects */
+.form-control {
+    width: 60%;
+    padding: 10px;
+    margin-top: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 1.25rem;
+}
+
+.form-control-dropdown {
+    width: 60%;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 1.25rem;
+    margin-top: 0.75rem;
+    
+}
+
+
+
+/* Estilo para el textarea */
+textarea.form-control {
+    resize: none;
+    margin-bottom: 1.25rem;
+    width: 60%;
+}
+
+/* Estilo de los botones */
+.btn {
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+
+
+/* Botón cancelar */
+.btn {
+    background-color: #f1962e;
+    color: white;
+    border-bottom: 2px solid #f1962e;
+    margin-right: 2rem;
+    margin-top: 2rem;
+}
+
+.btn:hover {
+    background-color: #ffff;
+    color:#f1962e;
+    border-bottom: 2px solid #f1962e;
+
+}
+
+.image-upload-container {
+    
+    width: 50%;
+}
+
+/* Etiqueta del input */
+.image-label {
+    font-size: 16px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Vista previa de la imagen */
+.image-preview {
+    margin-bottom: 10px;
+}
+
+.image-preview img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    border: 1px solid #a1a1a1;
+}
+
+
+/* Estilo para el input file */
+input[type="file"] {
+    background-color: #f1962e;
+    color: white;
+    border: 2px solid #f1962e;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    display: inline-block;
+    font-size: 16px;
+}
+
+/* Efecto hover para el input file */
+input[type="file"]:hover {
+    background-color: #ffff;
+    color: #f1962e;
+    border: 2px solid #f1962e;
+}
+
+/* Estilo para el label que envuelve el input file (para hacerlo más estilizado) */
+input[type="file"]::file-selector-button {
+    background-color: #f1962e;
+    color: white;
+    border: 2px solid #f1962e;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Hover para el selector de archivo */
+input[type="file"]::file-selector-button:hover {
+    background-color: #ffff;
+    color: #f1962e;
+    border: 2px solid #f1962e;
+}
+
+
+.form-data-label{
+    font-size: 24px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+    padding-left: 2.75rem;
+
+
+
+}
+
+
+.form-group.row {
+    margin-bottom: 15px; /* Adjust the spacing between rows */
+}

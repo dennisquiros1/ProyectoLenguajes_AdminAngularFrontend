@@ -1,0 +1,47 @@
+<body>
+    <form class="form-group form-style">
+        <h1>Comentario del curso</h1>
+
+
+        <div class="form-group row">
+            <label class="control-label col-md-12">ID comentario: </label>
+            <div class="col-md-4">
+                <label class="form-data-label">{{ courseComment.id }}</label>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="control-label col-md-12">ID autor: </label>
+            <div class="col-md-4">
+                <label class="form-data-label">{{ courseComment.idAuthor }}</label>
+            </div>
+        </div>
+
+        
+        <div class="form-group row">
+            <label class="control-label col-md-12">ID Curso: </label>
+            <div class="col-md-4">
+                <label class="form-data-label">{{ courseComment.idCourse }}</label>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="control-label col-md-12">Fecha: </label>
+            <div class="col-md-4">
+                <label class="form-data-label">{{ courseComment.date }}</label>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="control-label col-md-12">Contenido: </label>
+            <div class="col-md-4">
+                <label class="form-data-label">{{ courseComment.content }}</label>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <button type="button" class="btn" [routerLink]="['/course-comments-list/', courseComment.idCourse]">Volver</button>
+        </div>
+    </form>
+</body>

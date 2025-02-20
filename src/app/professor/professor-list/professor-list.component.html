@@ -1,0 +1,31 @@
+
+<div class="table-wrapper">
+    <div class="table-title">
+        <h2 class="table-header">Profesores </h2>
+        <button class="file-label add-button" [routerLink]="['/professor-add/']">Agregar</button>
+    </div>
+    <table class="table table-striped" *ngIf="professor">
+        <thead>
+            <tr>
+                <th class="header-cell">ID</th>
+                <th class="header-cell">Nombre</th>
+                <th class="header-cell">Apellido</th>
+                <th class="header-cell">Correo</th>
+                <th class="header-cell">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let p of professor; let i = index">
+                <td>{{ p.id }}</td>
+                <td>{{ p.name }}</td>
+                <td>{{ p.sName }}</td>
+                <td>{{ p.email }}</td>
+                <td class="action-buttons">
+                    <a class="action-link" [routerLink]="['/professor-details/', p.id]"> Ver </a>
+                    <a class="action-link delete-link" (click)="delete(p.id)"> Eliminar </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+

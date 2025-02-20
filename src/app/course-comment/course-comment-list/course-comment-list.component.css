@@ -1,0 +1,133 @@
+/* Estilo para el encabezado de la tabla */
+.table-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin-bottom: 20px; /* Espacio entre el encabezado y la tabla */
+}
+
+/* Estilo para el título del encabezado */
+.table-header {
+    font-size: 24px;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    margin-left: 1.25rem;
+}
+
+/* Botón Agregar */
+.add-button {
+    display: inline-block;
+    background-color: #f1962e;
+    border-bottom: 2px solid #f1962e;
+    color: white;
+    padding: 8px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-right: 2.15rem;
+}
+
+/* Estilo de las celdas del encabezado */
+th.header-cell {
+    text-align: center;
+    background-color: #e2e6ea;
+    font-weight: bold;
+    padding: 12px;
+    border-bottom: 2px solid #ddd;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-right: 1.5rem;
+}
+
+/* Estilo de las filas de la tabla */
+.table td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ddd; /* Línea divisoria entre filas */
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Acción de botones en la tabla */
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.action-link {
+    color: #007bff;
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 3px;
+    transition: color 0.2s ease;
+}
+
+.action-link:hover {
+    color: #0056b3;
+}
+
+/* Estilo de los enlaces de eliminación */
+.delete-link {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+.delete-link:hover {
+    color: #bd2130;
+}
+
+.add-button:hover {
+    background-color: #fff;
+    border-bottom: 2px solid #f1962e;
+    color: #f1962e;
+}
+
+/* Estilo de las etiquetas de tabla */
+.table-label {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+/* Estilo general de la tabla */
+.table {
+    width: 94%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-left: 2rem;
+    
+    margin-right: 1.5rem;
+}
+
+/* Estilo de las celdas de la tabla */
+.table th,
+.table td {
+    padding: 0.75rem;
+    text-align: left;
+    border: 1px solid #a1a1a1; /* Borde interno de las celdas */
+}
+
+/* Filas alternadas en la tabla */
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f9f9f9; /* Fondo claro en filas impares */
+}
+
+.table-striped tbody tr:nth-of-type(even) {
+    background-color: white; /* Fondo blanco en filas pares */
+}
+
+/* Estilo de las celdas de la tabla */
+table th,
+.table td {
+    padding: 0.75rem;
+    text-align: left;
+    border: 1px solid #a1a1a1;
+}

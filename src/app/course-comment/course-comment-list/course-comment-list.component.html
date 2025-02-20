@@ -1,0 +1,26 @@
+
+<div class="table-wrapper">
+    <div class="table-title">
+        <h2 class="table-header">Comentarios</h2>
+    </div>
+    <table class="table table-striped" *ngIf="courseComment">
+        <thead>
+            <tr>
+                <th class="header-cell">ID</th>
+                <th class="header-cell">ID-Autor</th>
+                <th class="header-cell">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let c of courseComment; let i = index">
+                <td>{{ c.id }}</td>
+                <td>{{ c.authorId }}</td>
+                <td class="action-buttons">
+                    <a class="action-link" [routerLink]="['/course-comment-details/', c.id]"> Ver </a>
+                    <a class="action-link delete-link" (click)="delete(c.id)"> Eliminar </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+

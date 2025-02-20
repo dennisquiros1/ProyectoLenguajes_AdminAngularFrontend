@@ -1,0 +1,52 @@
+<body>
+    <form class="form-group form-style">
+        <h1>Detalles de la noticia</h1>
+
+        <div class="form-group row">
+            <label class="control-label col-md-12">Titulo: </label>
+            <div class="col-md-4">
+                <label class="form-data-label"> {{ news.name }} </label>
+            </div>
+        </div>
+
+
+        <div class="form-group row">
+            <label class="control-label col-md-12">ID: </label>
+            <div class="col-md-4">
+                <label class="form-data-label"> {{ news.id }} </label>
+            </div>
+        </div>
+
+
+        <div class="form-group row">
+            <label class="control-label col-md-12">Cuerpo: </label>
+            <div class="col-md-4">
+                <label class="form-data-label"> {{ news.paragraph }} </label>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="control-label col-md-12">Fecha: </label>
+            <div class="col-md-4">
+                <label class="form-data-label"> {{ news.date}} </label>
+            </div>
+        </div>
+
+
+        <div class="form-group row">
+            <label class="control-label col-md-12">Imagen: </label>
+            <div class="col-md-4">
+                <label class="form-data-label">
+                    <div class="image-preview" *ngIf="news.image">
+                        <img [src]="news.image" alt="Noticia Imagen" style="max-width: 100%;"/>
+                    </div>
+                </label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <button type="button" class="btn" [routerLink]="['/news-list']">Volver</button>
+        </div>
+
+    </form>
+</body>

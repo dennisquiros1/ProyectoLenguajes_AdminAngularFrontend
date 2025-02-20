@@ -1,0 +1,35 @@
+
+<div class="table-wrapper">
+    <div class="table-title">
+        <h2 class="table-header">Estudiantes </h2>
+    </div>
+    <table class="table table-striped" *ngIf="student">
+        <thead>
+            <tr>
+                <th class="header-cell">ID</th>
+                <th class="header-cell">Nombre</th>
+                <th class="header-cell">Apellido</th>
+                <th class="header-cell">Correo</th>
+                <th class="header-cell">Aprobación</th>
+                <th class="header-cell">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let s of student; let i = index">
+                <td>{{ s.id }}</td>
+                <td>{{ s.name }}</td>
+                <td>{{ s.sName }}</td>
+                <td>{{ s.email }}</td>
+                
+                <td class="action-buttons">
+                    <a class="action-link" [routerLink]="['/student-approval/', s.id]"> Revisar </a>
+                    </td>
+                <td class="action-buttons">
+                    <a class="action-link" [routerLink]="['/student-details/', s.id]"> Ver </a>
+                    <a class="action-link delete-link" (click)="delete(s.id)"> Eliminar </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+

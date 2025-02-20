@@ -1,0 +1,96 @@
+/* Estilo general para el contenedor del formulario */
+.form-container {
+    margin-left: 45px;
+    margin-right: auto;
+    max-width: 400px;
+}
+
+/* Estilo para el título */
+h2 {
+    margin-top: 2rem;
+    text-align: center;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2rem;
+    margin-bottom: 35px;
+}
+
+/* Estilo para los campos de entrada */
+.form-group {
+    position: relative;
+    
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 20px;
+}
+
+/* Estilo para los inputs */
+.form-control-input {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.form-control-input:focus {
+    border-color: #f1962e;
+    outline: none;
+}
+
+/* Estilo para las etiquetas */
+.label-control {
+    position: absolute;
+    top: 0;
+    left: 20px;
+    font-size: 0.9rem;
+    color: #999;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.form-control-input:focus + .label-control,
+.form-control-input:not(:placeholder-shown) + .label-control {
+    top: -18px;
+    font-size: 0.8rem;
+    color: #f1962e;
+}
+
+/* Estilo para el botón de submit */
+.btn {
+    width: 100%;
+    padding: 12px 20px;
+
+    border: none;
+    border-radius: 5px;
+
+    font-size: 1.1rem;
+    cursor: pointer;
+    background-color: #f1962e;
+    color: white;
+    border-bottom: 2px solid #f1962e;
+}
+
+.btn:hover {
+    background-color: #ffff;
+    color:#f1962e;
+    border-bottom: 2px solid #f1962e;
+}
+
+
+
+
+/* Estilo para el botón de submit cuando está deshabilitado */
+.form-control-submit-button:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+}
+
+/* Estilo para el formulario completo */
+#loginForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
