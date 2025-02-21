@@ -3,7 +3,7 @@
     <div class="table-title">
         <h2 class="table-header">Estudiantes </h2>
     </div>
-    <table class="table table-striped" *ngIf="student">
+    <table class="table table-striped" *ngIf="students">
         <thead>
             <tr>
                 <th class="header-cell">ID</th>
@@ -15,7 +15,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let s of student; let i = index">
+            <tr *ngFor="let s of students; let i = index">
                 <td>{{ s.id }}</td>
                 <td>{{ s.name }}</td>
                 <td>{{ s.sName }}</td>
