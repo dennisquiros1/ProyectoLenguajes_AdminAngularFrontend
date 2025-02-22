@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { RestService } from '../../rest.service';
 
 @Component({
   selector: 'app-student-details',
@@ -8,7 +9,13 @@ import { RouterLink } from '@angular/router';
   templateUrl: './student-details.component.html',
   styleUrl: './student-details.component.css'
 })
-export class StudentDetailsComponent {
-student: any;
+export class StudentDetailsComponent implements OnInit {
+  constructor (public rest: RestService, private activeRoute: ActivatedRoute, private router: Router){}
+  student: any;
 
+  ngOnInit(): void {
+    this.rest.getStudentById(this.activeRoute.snapshot.params['id']).subscribe((data : {}) => {
+      this.student = data
+    });
+  }
 }

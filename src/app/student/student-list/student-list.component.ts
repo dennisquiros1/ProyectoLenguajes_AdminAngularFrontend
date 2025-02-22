@@ -5,7 +5,8 @@ import { RestService } from '../../rest.service';
 
 @Component({
   selector: 'app-student-list',
-  imports: [NgIf,NgFor,RouterLink, CommonModule],
+  standalone: true,
+  imports: [CommonModule, NgIf, NgFor, RouterLink],
   templateUrl: './student-list.component.html',
   styleUrl: './student-list.component.css'
 })

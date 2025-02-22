@@ -55,7 +55,6 @@ th.header-cell {
 
 /* Acción de botones en la tabla */
 .action-buttons {
-    display: flex;
     justify-content: center;
     gap: 10px;
 }
@@ -80,6 +79,7 @@ th.header-cell {
 
 .delete-link:hover {
     color: #bd2130;
+    cursor: pointer;
 }
 
 .add-button:hover {
