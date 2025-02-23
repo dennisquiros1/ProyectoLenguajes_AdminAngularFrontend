@@ -39,7 +39,7 @@ export class RestService {
   }
 
   addProfessor(professor : any): Observable<any>{
-    return this.http.post<any> (API_URL +"/professor/postProfessor/", professor, HTTP_OPTIONS);
+    return this.http.post<any> (API_URL +"/professor/postProfessor", professor, HTTP_OPTIONS);
   }
 
 }

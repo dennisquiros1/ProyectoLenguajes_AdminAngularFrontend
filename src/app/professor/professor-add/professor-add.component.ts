@@ -13,16 +13,18 @@ import { Router } from '@angular/router';
 })
 export class ProfessorAddComponent {
 
-  @Input() professor: any={Id : '', name : '', lastName : '', email : '', password : '', active : 1, photo : '', expertise : ''};
+  @Input() professor: any={id : '', name : '', lastName : '', email : '', password : '', active : 1, photo : '', expertise : ''};
 
   constructor(public rest: RestService, private router: Router){}
 
 add() {
-  if (this.professor.Id && this.professor.name && this.professor.lastName && this.professor.email && this.professor.password && this.professor.active) {
+  if (this.professor.id && this.professor.name && this.professor.lastName && this.professor.email && this.professor.password && this.professor.active) {
     this.rest.addProfessor(this.professor).subscribe({
         next: (result) => console.log(result),
         error: (e) => console.error(e)
+        
     });
+    this.router.navigate(['/professor-list']);
 } else {
     alert("All fields are required.");
 }

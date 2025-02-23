@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule, NgFor, NgIf } from '@angular/common';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { RouterLink } from '@angular/router';
 import { RestService } from '../../rest.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-professor-list',
@@ -12,7 +13,7 @@ import { RestService } from '../../rest.service';
 export class ProfessorListComponent implements OnInit {
 professor: any = [];
 
-constructor(public rest:RestService, private activeRouted : ActivatedRoute){}
+constructor(public rest:RestService, private router: Router){}
 
 ngOnInit(): void {
   this.getProfessors();
@@ -28,7 +29,7 @@ delete(id: any) {
   this.rest.deleteProfessor(id).subscribe((data: {}) => {
     alert(JSON.stringify(data));
   });
-throw new Error('Method not implemented.');
+  this.router.navigate(['/professor-list']);
 }
 
 }
