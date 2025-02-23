@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule, NgFor, NgIf } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
+import { RestService } from '../../rest.service';
 
 @Component({
   selector: 'app-professor-list',
@@ -8,12 +9,25 @@ import { RouterLink } from '@angular/router';
   templateUrl: './professor-list.component.html',
   styleUrl: './professor-list.component.css'
 })
-export class ProfessorListComponent {
+export class ProfessorListComponent implements OnInit {
 professor: any = [];
 
+constructor(public rest:RestService, private activeRouted : ActivatedRoute){}
 
+ngOnInit(): void {
+  this.getProfessors();
+}
 
-delete(arg0: any) {
+getProfessors(){
+  this.rest.getProfessors().subscribe((data : {}) => {
+    this.professor = data;
+  })
+}
+
+delete(id: any) {
+  this.rest.deleteProfessor(id).subscribe((data: {}) => {
+    alert(JSON.stringify(data));
+  });
 throw new Error('Method not implemented.');
 }
 

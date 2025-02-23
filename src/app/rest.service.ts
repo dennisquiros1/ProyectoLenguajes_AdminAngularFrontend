@@ -25,4 +25,21 @@ export class RestService {
   getStudentById(id: any): Observable<any>{
     return this.http.get<any> (API_URL + "/student/getStudent/" + id, HTTP_OPTIONS);
   }
+
+  getProfessors(): Observable<any>{
+    return this.http.get<any> (API_URL + "/professor/getAllProfessor", HTTP_OPTIONS);
+  }
+
+  getProfessorById(id : any): Observable<any>{
+    return this.http.get<any> (API_URL + "/professor/getProfessor/" + id, HTTP_OPTIONS);
+  }
+
+  deleteProfessor(id : any): Observable<any>{
+    return this.http.delete<any> (API_URL + "/professor/deleteProfessor/" + id, HTTP_OPTIONS);
+  }
+
+  addProfessor(professor : any): Observable<any>{
+    return this.http.post<any> (API_URL +"/professor/postProfessor/", professor, HTTP_OPTIONS);
+  }
+
 }

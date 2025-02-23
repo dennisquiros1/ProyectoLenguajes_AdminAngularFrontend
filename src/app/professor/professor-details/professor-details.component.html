@@ -19,7 +19,7 @@
         <div class="form-group row">
             <label class="control-label col-md-12">Apellido: </label>
             <div class="col-md-4">
-                <label class="form-data-label">{{ Professor.sname }}</label>
+                <label class="form-data-label">{{ Professor.lastName }}</label>
             </div>
         </div>
 
@@ -33,12 +33,12 @@
         <div class="form-group row">
             <label class="control-label col-md-12">Formación: </label>
             <div class="col-md-4">
-                <label class="form-data-label">{{ Professor.formation }}</label>
+                <label class="form-data-label">{{ Professor.expertise }}</label>
             </div>
         </div>
 
         <div class="form-group">
-            <button type="button" class="btn" [routerLink]="['/course-professor-list']">Volver</button>
+            <button type="button" class="btn" [routerLink]="['/professor-list']">Volver</button>
         </div>
     </form>
 </body>

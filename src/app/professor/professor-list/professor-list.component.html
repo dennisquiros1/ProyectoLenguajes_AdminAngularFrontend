@@ -18,7 +18,7 @@
             <tr *ngFor="let p of professor; let i = index">
                 <td>{{ p.id }}</td>
                 <td>{{ p.name }}</td>
-                <td>{{ p.sName }}</td>
+                <td>{{ p.lastName }}</td>
                 <td>{{ p.email }}</td>
                 <td class="action-buttons">
                     <a class="action-link" [routerLink]="['/professor-details/', p.id]"> Ver </a>

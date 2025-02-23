@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import { Component , Input} from '@angular/core';
 import { CommonModule, NgFor, NgIf } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { RestService } from '../../rest.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-professor-add',
@@ -11,10 +13,19 @@ import { FormsModule } from '@angular/forms';
 })
 export class ProfessorAddComponent {
 
-  professor: any={};
+  @Input() professor: any={Id : '', name : '', lastName : '', email : '', password : '', active : 1, photo : '', expertise : ''};
+
+  constructor(public rest: RestService, private router: Router){}
 
 add() {
-throw new Error('Method not implemented.');
+  if (this.professor.Id && this.professor.name && this.professor.lastName && this.professor.email && this.professor.password && this.professor.active) {
+    this.rest.addProfessor(this.professor).subscribe({
+        next: (result) => console.log(result),
+        error: (e) => console.error(e)
+    });
+} else {
+    alert("All fields are required.");
+}
 }
 
 }
