@@ -1,0 +1,82 @@
+/* Estilo general del formulario */
+.form-style {
+    background-color: white;
+    margin-left: 25px;
+}
+
+/* Estilo para etiquetas */
+label {
+    font-size: 16px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+    margin-bottom: 0.75rem;
+}
+
+h1 {
+    margin-top: 2rem;
+    font-size: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 2rem;
+}
+
+/* Estilo para los inputs y selects */
+.form-control {
+    width: 60%;
+    padding: 10px;
+    margin-top: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 1.25rem;
+}
+
+.form-control-dropdown {
+    width: 60%;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 1.25rem;
+    margin-top: 0.75rem;
+    
+}
+
+
+
+/* Estilo para el textarea */
+input {
+    resize: none;
+    margin-bottom: 1.25rem;
+    width: 60%;
+}
+
+select {
+    margin-bottom: 1.25rem;
+    width: 30%;
+    height: 60%;
+}
+
+/* Estilo de los botones */
+.btn {
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+
+
+/* Botón cancelar */
+.btn {
+    background-color: #f1962e;
+    color: white;
+    border-bottom: 2px solid #f1962e;
+    margin-right: 2rem;
+}
+
+.btn:hover {
+    background-color: #ffff;
+    color:#f1962e;
+    border-bottom: 2px solid #f1962e;
+
+}

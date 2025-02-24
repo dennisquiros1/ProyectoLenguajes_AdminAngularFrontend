@@ -18,12 +18,20 @@ export class RestService {
   constructor(private http: HttpClient) { }
 
   getStudents(): Observable<any>{
-    return this.http.get<any> (API_URL + "/student/getUnacceptedStudents", HTTP_OPTIONS);
+    return this.http.get<any> (API_URL + "/student/getAllStudent", HTTP_OPTIONS);
     //to do: handling errors
   }
 
   getStudentById(id: any): Observable<any>{
     return this.http.get<any> (API_URL + "/student/getStudent/" + id, HTTP_OPTIONS);
+  }
+
+  deleteStudent(id: any): Observable<any>{
+    return this.http.delete<any> (API_URL + "/student/deleteStudent/" + id, HTTP_OPTIONS);
+  }
+
+  saveStudent(student: any): Observable<any>{
+    return this.http.post<any> (API_URL + "/student/postStudent", student, HTTP_OPTIONS);
   }
 
   getProfessors(): Observable<any>{

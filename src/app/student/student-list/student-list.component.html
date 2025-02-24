@@ -20,12 +20,11 @@
                 <td>{{ s.name }}</td>
                 <td>{{ s.lastName }}</td>
                 <td>{{ s.email }}</td>
-                
-                
+
                 <td class="action-buttons"> 
                     <a class="action-link" [routerLink]="['/student-approval/', s.id]"> Revisar </a> 
                 </td>
-                
+
                 <td class="action-buttons">
                     <a class="action-link" [routerLink]="['/student-details/', s.id]"> Ver </a>
                     <a class="action-link delete-link" (click)="delete(s.id)"> Eliminar </a>

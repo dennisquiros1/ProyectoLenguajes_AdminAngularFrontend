@@ -1,1 +1,89 @@
-<p>student-approval works!</p>
+<body>
+    <form class="form-group form-style">
+        <h1>Verificar información de Estudiante</h1>
+       
+        <div class="form-group row">
+            <label class="control-label col-md-12">Carné estudiantil: </label>
+            <div class="col-md-4">
+                <input class="form-control" [(ngModel)]="student.id" name="id" placeholder="id" required />
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="control-label col-md-12">Nombre: </label>
+            <div class="col-md-4">
+                <input class="form-control" [(ngModel)]="student.name" name="name" placeholder="Nombre" required />
+            </div>
+        </div>
+
+        
+        <div class="form-group row">
+            <label class="control-label col-md-12">Apellido: </label>
+            <div class="col-md-4">
+                <input class="form-control" [(ngModel)]="student.lastName" name="lastName" placeholder="Apellido" required />
+            </div>
+        </div>
+    
+        <div class="form-group row">
+            <label class="control-label col-md-12">Correo: </label>
+            <div class="col-md-4">
+                <input class="form-control" [(ngModel)]="student.email" name="email" placeholder="Correo" required />
+            </div>
+        </div>
+        
+        <div class="form-group row">
+            <label class="control-label col-md-12">Contraseña: </label>
+            <div class="col-md-4">
+                <input type="password" class="form-control" [(ngModel)]="student.password" name="password" placeholder="Contraseña" required />
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="control-label col-md-12">Intereses: </label>
+            <div class="col-md-4">
+                <input class="form-control" [(ngModel)]="student.likings" name="likings" placeholder="Intereses" required />
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="control-label col-md-12">Actividad: </label>
+            <div class="col-md-4">
+                <select matNativeControl [(ngModel)]="student.active" name="active" required>
+                    <option value="0">Estudiante inactivo</option>
+                    <option value="1">Estudiante activo</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="control-label col-md-12">Registro: </label>
+            <div class="col-md-4">
+                <select class="form-select" matNativeControl [(ngModel)]="student.register" name="register" required>
+                    <option value="0">Estudiante sin registrar</option>
+                    <option value="1">Estudiante registrado</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="control-label col-md-12">Asociación</label>
+            <div class="col-md-4">
+                <select matNativeControl [(ngModel)]="student.asociation" name="association" required>
+                    <option value="0">Estudiante regular</option>
+                    <option value="1">Estudiante de Asociación</option>
+                </select>
+            </div>
+        </div>
+        
+                
+        <div class="form-group">
+        <button type="submit" class="btn btn-default" (click)="saveStudent()">
+            Guardar
+        </button>
+
+        <button type="button" class="btn" [routerLink]="['/student-list']">Cancelar</button>
+
+        </div>
+
+    </form>
+    </body>

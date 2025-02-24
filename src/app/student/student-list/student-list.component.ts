@@ -26,8 +26,16 @@ getStudents(){
   })
 }
 
-delete(arg0: any) {
-throw new Error('Method not implemented.');
+delete(id: any) {
+  try{
+    this.rest.deleteStudent(id).subscribe((data: {}) => {
+      alert('Estudiante eliminado exitosamente.');
+      this.getStudents();
+    })
+  } catch (error){
+    alert('Hubo un error tratando de eliminar al estudiante. Intente de nuevo');
+
+  }
 }
 
 }
