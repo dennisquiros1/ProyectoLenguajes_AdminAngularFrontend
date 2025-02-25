@@ -1,22 +1,18 @@
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { RouterLink, Router } from '@angular/router';
+import { Router } from '@angular/router';
+import { CommsService } from '../comms.service';
 
 @Component({
   selector: 'app-login',
-  imports: [FormsModule],
+  standalone: true,
   templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
+  constructor(private router: Router, private commService: CommsService) {}
 
-  constructor(private router: Router) {}
-
-
-AuthenticateStudent() {
-
-  this.router.navigate(['/home']);
-
-}
-
+  AuthenticateStudent() {
+    this.router.navigate(['/home']);
+    this.commService.triggerShowElementsEvent();
+  }
 }

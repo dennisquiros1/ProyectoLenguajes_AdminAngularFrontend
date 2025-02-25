@@ -1,20 +1,33 @@
-import { Component } from '@angular/core';
-import { Router, RouterLink } from '@angular/router';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { Location } from '@angular/common';
+import { CommsService } from '../comms.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-header',
+  standalone: true,
   imports: [RouterLink, CommonModule],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.css'
+  styleUrls: ['./header.component.css']
 })
-export class HeaderComponent {
- 
-  constructor(private location: Location) { }
+export class HeaderComponent implements OnInit, OnDestroy {
+  private subscription: Subscription = Subscription.EMPTY;
+
+  constructor(private location: Location, private commService: CommsService) {}
+
+  ngOnInit() {
+    this.subscription = this.commService.showElements$.subscribe(() => {
+      document.documentElement.style.setProperty('--nav-item-display', 'flex');
+    });
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
+  }
 
   goBack(): void {
     this.location.back();
   }
-
 }

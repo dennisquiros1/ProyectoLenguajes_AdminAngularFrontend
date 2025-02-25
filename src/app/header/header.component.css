@@ -43,8 +43,10 @@
 }
 
 .navbar-custom .nav-item {
-    list-style: none; /* Removes bullet points */
+    list-style: none;
+    display: var(--nav-item-display, none); /* Use the custom property, default to none */
 }
+
 
 .navbar-custom .nav-item .nav-link {
     padding: 0.625rem 0.75rem;
