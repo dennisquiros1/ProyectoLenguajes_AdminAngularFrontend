@@ -59,7 +59,7 @@ export const routes: Routes = [
     { path: 'professor-details/:id', component: ProfessorDetailsComponent},
     //Student
     { path: 'student-list', component: StudentListComponent },
-    { path: 'student-approval/:id', component: StudentApprovalComponent },
+    { path: 'student-approval/:id', component: StudentApprovalComponent},
     { path: 'student-details/:id', component: StudentDetailsComponent },
     //PageNotFound
     { path: '**', component: PageNotFoundComponent}

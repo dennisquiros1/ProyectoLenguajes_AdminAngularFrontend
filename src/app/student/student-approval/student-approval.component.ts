@@ -9,7 +9,6 @@ import { RestService } from '../../rest.service';
 
 @Component({
   selector: 'app-student-approval',
-  standalone: true,
   imports: [MatInputModule, MatButtonModule, MatFormFieldModule, MatIconModule, FormsModule, RouterLink],
   templateUrl: './student-approval.component.html',
   styleUrl: './student-approval.component.css'
