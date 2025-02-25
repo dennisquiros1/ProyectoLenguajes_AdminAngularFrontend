@@ -28,6 +28,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   goBack(): void {
-    this.location.back();
+    const previousUrl = document.referrer;
+    if(previousUrl && !previousUrl.includes('/login')){
+      this.location.back();
+    }
+
   }
 }

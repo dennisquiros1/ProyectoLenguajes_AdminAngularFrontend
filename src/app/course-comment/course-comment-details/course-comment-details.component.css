@@ -5,12 +5,14 @@
 }
 
 /* Estilo para etiquetas */
-label {
+.control-label {
     font-size: 16px;
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
     color: #333;
-    margin-bottom: 0.75rem;
+    margin-bottom: 10px;
+    display: block; /* Make the label a block-level element */
+
 }
 
 h1 {
@@ -77,17 +79,18 @@ textarea.form-control {
 }
 
 .form-data-label{
-    font-size: 24px;
-    font-weight: bold;
+
+    padding: 5px;
+    margin-top: 40px;
+    font-size: 24px; 
     font-family: Arial, Helvetica, sans-serif;
     color: #333;
-    padding-left: 2.75rem;
-
-
+ 
 
 }
 
 
 .form-group.row {
-    margin-bottom: 15px; /* Adjust the spacing between rows */
+    margin-top: 20px;
+    margin-bottom: 20px; /* Adjust the spacing between rows */
 }

@@ -5,12 +5,14 @@
 }
 
 /* Estilo para etiquetas */
-label {
+.control-label {
     font-size: 16px;
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
     color: #333;
-    margin-bottom: 0.75rem;
+    margin-bottom: 10px;
+    display: block; /* Make the label a block-level element */
+
 }
 
 h1 {
@@ -26,7 +28,8 @@ h1 {
     padding: 10px;
     margin-top: 10px;
     font-family: Arial, Helvetica, sans-serif;
-    margin-bottom: 1.25rem;
+    margin-bottom: 2.25rem;
+
 }
 
 .form-control-dropdown {
@@ -66,7 +69,6 @@ textarea.form-control {
     color: white;
     border-bottom: 2px solid #f1962e;
     margin-right: 2rem;
-    margin-top: 2rem;
 }
 
 .btn:hover {
@@ -75,6 +77,26 @@ textarea.form-control {
     border-bottom: 2px solid #f1962e;
 
 }
+
+.form-data-label{
+
+    padding: 5px;
+    margin-top: 40px;
+    font-size: 24px; 
+    font-family: Helvetica, sans-serif;
+    color: #333;
+    background-color: azure;
+
+
+}
+
+
+.form-group.row {
+    margin-top: 20px;
+    margin-bottom: 20px; /* Adjust the spacing between rows */
+}
+
+
 
 .image-upload-container {
     max-height: 500px;
@@ -96,10 +118,10 @@ textarea.form-control {
 /* Vista previa de la imagen */
 .image-preview {
     margin-bottom: 10px;
-    max-height: 300px;
-    max-width: 300px;
-    min-height: 300px;
-    min-width: 300px;
+    max-height: 500px;
+    max-width: 500px;
+    min-height: 500px;
+    min-width: 500px;
 
 }
 
@@ -148,20 +170,4 @@ input[type="file"]::file-selector-button:hover {
     background-color: #ffff;
     color: #f1962e;
     border: 2px solid #f1962e;
-}
-
-.form-data-label{
-    font-size: 24px;
-    font-weight: bold;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #333;
-    padding-left: 2.75rem;
-
-
-
-}
-
-
-.form-group.row {
-    margin-bottom: 15px; /* Adjust the spacing between rows */
 }
