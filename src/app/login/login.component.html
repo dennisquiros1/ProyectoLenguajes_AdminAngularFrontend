@@ -1,22 +1,32 @@
 <body>
-    <div class="col-lg-6">
-      <div class="form-container">
-        <h2>Login</h2>
-        <form id="loginForm" data-toggle="validator" data-focus="false">
-          <div class="form-group">
-            <input type="text" class="form-control-input" id="lId" name="lId" [(ngModel)]="lId" required>
-            <label class="label-control" for="lId">ID</label>
-          </div>
-  
-          <div class="form-group">
-            <input type="password" class="form-control-input" id="lPassword" name="lPassword" [(ngModel)]="lPassword" required>
-            <label class="label-control" for="lPassword">Password</label>
-          </div>
-  
-          <div class="form-group">
-            <button type="button" class="btn" (click)="AuthenticateAdm()">Let's start!</button>
-          </div>
-        </form>
-      </div>
+  <div class="col-lg-6">
+    <div class="form-container">
+      <h2>Login</h2>
+      <form id="loginForm" data-toggle="validator" data-focus="false">
+        <div class="form-group">
+          <input type="text" class="form-control-input" id="lId" name="lId" [(ngModel)]="lId" required>
+          <label class="label-control" for="lId">ID</label>
+        </div>
+
+        <div class="form-group">
+          <input type="password" class="form-control-input" id="lPassword" name="lPassword" [(ngModel)]="lPassword" required>
+          <label class="label-control" for="lPassword">Password</label>
+        </div>
+
+        <div class="form-group">
+          <button type="button" class="btn" (click)="AuthenticateAdm()">Let's start!</button>
+        </div>
+
+        <!-- Enlaces añadidos -->
+        <div class="form-group">
+          <a href="https://portalstudent-g5dwcrfthda7cyec.brazilsouth-01.azurewebsites.net/ " class="link">INFO-E Estudiantes</a>
+        </div>
+
+        <div class="form-group">
+          <a href="https://portalprofesor-b4e3g2h8brbrcqc2.brazilsouth-01.azurewebsites.net/ " class="link">INFO-E Professorres</a>
+        </div>
+
+      </form>
     </div>
-  </body>
+  </div>
+</body>
