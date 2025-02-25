@@ -1,7 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { NgIf } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink, TitleStrategy } from '@angular/router';
+import { RestService } from '../../rest.service';
+import { title } from 'process';
+import { totalmem } from 'os';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-news-add',
@@ -10,18 +14,72 @@ import { RouterLink } from '@angular/router';
   templateUrl: './news-edit.component.html',
   styleUrl: './news-edit.component.css'
 })
-export class NewsEditComponent {
-add() {
-throw new Error('Method not implemented.');
-}
-  selectedFile: File | null = null;
+export class NewsEditComponent implements OnInit{
   
-  news = {
-    image: '',
+
+
+
+  @Input() newsUpdated = {
+    idNew: '',
+    date: '',
+    photo: '',
     paragraph:'',
-    name:''
+    title:''
   };
 
+  
+  newsPrev = {
+    date: '',
+    photo: '',
+    paragraph:'',
+    title:''
+  };
+
+    constructor(public rest: RestService, private router: Router, private activeRoute : ActivatedRoute) {}
+  
+  ngOnInit(): void {
+
+    this.rest.getNewById(this.activeRoute.snapshot.params['id']).subscribe((data: any) => {
+      this.newsPrev = data;
+      this.newsUpdated.photo = this.newsPrev.photo; 
+    });
+
+
+  }
+
+  
+  add() {
+    swal.fire({
+      title: '¿Seguro que quieres editar?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Sí, editar',
+      cancelButtonText: 'Cancelar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.newsUpdated.date = new Date().toISOString().split('T')[0];
+        this.newsUpdated.idNew = this.activeRoute.snapshot.params['id'];
+  
+        if (this.newsPrev.photo.startsWith("data:image")) {
+          this.newsUpdated.photo = this.newsPrev.photo.split(",")[1];
+        }
+  
+        if (this.newsUpdated.photo && this.newsUpdated.paragraph && this.newsUpdated.title) {
+          this.rest.postNew(this.newsUpdated).subscribe({
+            next: (result) => swal.fire('Éxito', 'Noticia editada', 'success'),
+            error: (e) => swal.fire('Error', 'No se pudo editar la noticia', 'error')
+          }); 
+          this.router.navigate(['/news-list']);
+        } else {
+          swal.fire('Advertencia', 'Todos los campos deben de estar llenos', 'warning');
+        }
+      }
+    });
+  }
+  
+  
+  selectedFile: File | null = null;
+  
   onFileSelected(event: Event) {
     const input = event.target as HTMLInputElement;
     if (input.files && input.files.length > 0) {
@@ -29,10 +87,11 @@ throw new Error('Method not implemented.');
 
       const reader = new FileReader();
       reader.onload = () => {
-        this.news.image = reader.result as string;
+        this.newsPrev.photo = reader.result as string;
       };
       reader.readAsDataURL(this.selectedFile);
     }
   }
+
 
 }

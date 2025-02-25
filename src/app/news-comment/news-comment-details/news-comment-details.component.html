@@ -13,7 +13,7 @@
         <div class="form-group row">
             <label class="control-label col-md-12">ID autor: </label>
             <div class="col-md-4">
-                <label class="form-data-label">{{ newsComment.idAuthor }}</label>
+                <label class="form-data-label">{{ newsComment.id_User }}</label>
             </div>
         </div>
 
@@ -21,21 +21,21 @@
         <div class="form-group row">
             <label class="control-label col-md-12">ID Noticia: </label>
             <div class="col-md-4">
-                <label class="form-data-label">{{ newsComment.idNew }}</label>
+                <label class="form-data-label">{{ newsComment.id_New }}</label>
             </div>
         </div>
 
         <div class="form-group row">
             <label class="control-label col-md-12">Fecha: </label>
             <div class="col-md-4">
-                <label class="form-data-label">{{ newsComment.date }}</label>
+                <label class="form-data-label">{{ newsComment.date | date:'yyyy-MM-dd'  }}</label>
             </div>
         </div>
 
         <div class="form-group row">
             <label class="control-label col-md-12">Contenido: </label>
             <div class="col-md-4">
-                <label class="form-data-label">{{ newsComment.content }}</label>
+                <label class="form-data-label">{{ newsComment.contentC }}</label>
             </div>
         </div>
 

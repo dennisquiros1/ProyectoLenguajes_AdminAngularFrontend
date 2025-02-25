@@ -1,7 +1,7 @@
 
 <div class="table-wrapper">
     <div class="table-title">
-        <h2 class="table-header">Comentarios noticia</h2>
+        <h2 class="table-header">Comentarios noticia {{this.news.idNew}}</h2>
     </div>
     <table class="table table-striped" *ngIf="news">
         <thead>
@@ -15,8 +15,8 @@
         <tbody>
             <tr *ngFor="let n of news; let i = index">
                 <td>{{ n.id }}</td>
-                <td>{{ n.author }}</td>
-                <td>{{ n.date }}</td>
+                <td>{{ n.id_User }}</td>
+                <td>{{ n.date | date:'yyyy-MM-dd' }}</td>
                 <td class="action-buttons">
                     <a class="action-link" [routerLink]="['/news-comment-details/', n.id]"> Ver </a>
                     <a class="action-link delete-link" (click)="delete(n.id)"> Eliminar </a>

@@ -53,6 +53,8 @@ export class RestService {
     return this.http.post<any> (API_URL +"/professor/postProfessor", professor, HTTP_OPTIONS);
   }
 
+  //Admin
+
   validateAdministrator(administrator: any): Observable<any> {
     return this.http.post<any>(API_URL + "/administrator/validateAdministrator", administrator, HTTP_OPTIONS);
   }
@@ -61,6 +63,7 @@ export class RestService {
     return this.http.get<any>(API_URL + "/administrator/getAdministratorDataFromSession", HTTP_OPTIONS);
   }
 
+  //Courses
   getCourses(): Observable<any> {
     return this.http.get<any>(API_URL + "/course/getAllCourse", HTTP_OPTIONS);
   }
@@ -103,5 +106,18 @@ export class RestService {
   postNew(news : any): Observable<any>{
     return this.http.post<any> (API_URL +"/breakingNew/postBreakingNew", news, HTTP_OPTIONS);
   }
+
+  getAllNewsComments(id: any): Observable<any>{
+    return this.http.get<any> (API_URL+ "/commentNew/getCommentByNewId/"+id, HTTP_OPTIONS);
+  }
+
+  deleteNewsComment(id : any): Observable<any>{
+    return this.http.delete<any> (API_URL + "/commentNew/deleteCommentNew/"+id, HTTP_OPTIONS);
+  }
+
+  getCommentnew(id: any): Observable<any>{
+    return this.http.get<any> (API_URL+"/commentNew/getCommentNew/"+id, HTTP_OPTIONS);
+  }
+
 
 }

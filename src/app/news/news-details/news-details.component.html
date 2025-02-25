@@ -5,7 +5,7 @@
         <div class="form-group row">
             <label class="control-label col-md-12">Titulo: </label>
             <div class="col-md-4">
-                <label class="form-data-label"> {{ news.name }} </label>
+                <label class="form-data-label"> {{ news.title }} </label>
             </div>
         </div>
 
@@ -13,7 +13,7 @@
         <div class="form-group row">
             <label class="control-label col-md-12">ID: </label>
             <div class="col-md-4">
-                <label class="form-data-label"> {{ news.id }} </label>
+                <label class="form-data-label"> {{ news.idNew }} </label>
             </div>
         </div>
 
@@ -28,7 +28,7 @@
         <div class="form-group row">
             <label class="control-label col-md-12">Fecha: </label>
             <div class="col-md-4">
-                <label class="form-data-label"> {{ news.date}} </label>
+                <label class="form-data-label"> {{ news.date | date:'yyyy-MM-dd'  }} </label>
             </div>
         </div>
 
@@ -37,8 +37,8 @@
             <label class="control-label col-md-12">Imagen: </label>
             <div class="col-md-4">
                 <label class="form-data-label">
-                    <div class="image-preview" *ngIf="news.image">
-                        <img [src]="news.image" alt="Noticia Imagen" style="max-width: 100%;"/>
+                    <div class="image-preview" *ngIf="news.photo">
+                        <img [src]="'data:image/jpeg;base64,' + news.photo" alt="Noticia Imagen" style="max-width: 100%;"/>
                     </div>
                 </label>
             </div>

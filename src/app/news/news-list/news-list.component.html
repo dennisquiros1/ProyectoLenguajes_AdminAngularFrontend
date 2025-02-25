@@ -4,28 +4,26 @@
         <h2 class="table-header">Noticias</h2>
         <button class="file-label add-button" [routerLink]="['/news-add/']">Agregar</button>
     </div>
-    <table class="table table-striped" *ngIf="news">
+    <table class="table table-striped" *ngIf="BreakingNew">
         <thead>
             <tr>
                 <th class="header-cell">ID</th>
                 <th class="header-cell">Fecha</th>
                 <th class="header-cell">Titutlo</th>
-                <th class="header-cell">Comentarios</th>
                 <th class="header-cell">Acciones</th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let n of news; let i = index">
-                <td>{{ n.id }}</td>
-                <td>{{ n.date }}</td>
+            <tr *ngFor="let n of BreakingNew; let i = index">
+                <td>{{ n.idNew }}</td>
+                <td>{{ n.date | date:'yyyy-MM-dd' }}</td>
                 <td>{{ n.title }}</td>
+
                 <td class="action-buttons">
-                    <a class="action-link" [routerLink]="['/news-comment-list/', n.id]">Comentarios</a>
-                </td>
-                <td class="action-buttons">
-                    <a class="action-link" [routerLink]="['/news-details/', n.id]"> Ver </a>
-                    <a class="action-link" [routerLink]="['/news-edit/', n.id]"> Editar </a>
-                    <a class="action-link delete-link" (click)="delete(n.id)"> Eliminar </a>
+                    <a class="action-link" [routerLink]="['/news-comment-list/', n.idNew]">Comentarios</a>
+                    <a class="action-link" [routerLink]="['/news-details/', n.idNew]"> Ver </a>
+                    <a class="action-link" [routerLink]="['/news-edit/', n.idNew]"> Editar </a>
+                    <a class="action-link delete-link" (click)="delete(n.idNew)"> Eliminar </a>
                 </td>
             </tr>
         </tbody>

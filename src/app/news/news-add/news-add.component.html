@@ -6,7 +6,7 @@
         <div class="form-group row">
         <label class="control-label col-md-12">Titulo: </label>
         <div class="col-md-4">
-            <input class="form-control" [(ngModel)]="news.name" name="name" placeholder="Titulo de la noticia" required />
+            <input class="form-control" [(ngModel)]="news.title" name="title" placeholder="Titulo de la noticia" required />
         </div>
         </div>
 
@@ -22,8 +22,8 @@
         <div class="image-upload-container">
             <label class="image-label">Imagen</label>
             
-            <div class="image-preview" *ngIf="news.image">
-                <img [src]="news.image" />
+            <div class="image-preview" *ngIf="news.photo">
+                <img [src]="news.photo" />
             </div>
         
             
