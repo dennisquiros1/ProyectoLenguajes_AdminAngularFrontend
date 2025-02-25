@@ -50,4 +50,37 @@ export class RestService {
     return this.http.post<any> (API_URL +"/professor/postProfessor", professor, HTTP_OPTIONS);
   }
 
+  validateAdministrator(administrator: any): Observable<any> {
+    return this.http.post<any>(API_URL + "/administrator/validateAdministrator", administrator, HTTP_OPTIONS);
+  }
+
+  getAdministratorDataFromSession(): Observable<any> {
+    return this.http.get<any>(API_URL + "/administrator/getAdministratorDataFromSession", HTTP_OPTIONS);
+  }
+
+  getCourses(): Observable<any> {
+    return this.http.get<any>(API_URL + "/course/getAllCourse", HTTP_OPTIONS);
+  }
+
+  getCourseById(id: string): Observable<any> {
+    return this.http.get<any>(`${API_URL}/course/getCourse/${id}`, HTTP_OPTIONS);
+  }
+
+  postCourse(course: any): Observable<any> {
+    return this.http.post<any>(`${API_URL}/course/postCourse`, course, HTTP_OPTIONS);
+  }
+
+  deleteCourse(id: string): Observable<any> {
+    return this.http.delete(`${API_URL}/course/deleteCourse/${id}`, HTTP_OPTIONS);
+  }
+  getCommentByCourseAcronym(acronym: string): Observable<any> {
+    return this.http.get(`${API_URL}/commentCourse/getCommentByCourseAcronym/${acronym}`, HTTP_OPTIONS);
+  }
+  getCommentById(commentId: string): Observable<any> {
+    return this.http.get(`${API_URL}/commentCourse/getCommentCourse/${commentId}`, HTTP_OPTIONS);
+  }
+  deleteCommentCourse(id: number): Observable<any> {
+    return this.http.delete(`${API_URL}/commentCourse/deleteCommentCourse/${id}`);
+  }
+  
 }

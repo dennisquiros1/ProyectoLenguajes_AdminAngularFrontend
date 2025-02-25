@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RouterLink, Router } from '@angular/router';
+import { Router } from '@angular/router';
+import { RestService } from '../rest.service';
 
 @Component({
   selector: 'app-login',
@@ -10,13 +11,29 @@ import { RouterLink, Router } from '@angular/router';
 })
 export class LoginComponent {
 
-  constructor(private router: Router) {}
+  lId: string = '';
+  lPassword: string = '';
 
+  constructor(private router: Router, private restService: RestService) {}
 
-AuthenticateStudent() {
+  AuthenticateAdm() {
+    const administrator = {
+      id: this.lId,
+      password: this.lPassword
+    };
 
-  this.router.navigate(['/home']);
-
-}
-
+    this.restService.validateAdministrator(administrator).subscribe({
+      next: (response: any) => {
+        if (response.message === 'Authentication successful') {
+          this.router.navigate(['/home']);
+        } else {
+          alert('Invalid credentials');
+        }
+      },
+      error: (error: any) => {
+        console.error('Error during authentication', error);
+        alert('An error occurred during authentication: ' + error.message);
+      }
+    });
+  }
 }

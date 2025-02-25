@@ -34,8 +34,9 @@
         <div class="form-group row">
         <label class="control-label col-md-12">Profesor: </label>
         <div class="col-md-4">
-            <select class="form-control-dropdown" id="professorDD" [(ngModel)]="course.professor" name="professor" required>
-            </select>
+            <select class="form-control-dropdown" id="id_Professor" [(ngModel)]="course.id_Professor" name="id_Professor" required>
+                <option *ngFor="let professor of professors" [value]="professor.id">{{ professor.name }}</option>
+              </select>
         </div>
         </div>
 

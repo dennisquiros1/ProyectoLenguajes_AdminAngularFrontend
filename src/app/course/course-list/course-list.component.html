@@ -1,37 +1,42 @@
-
-        <div class="table-wrapper">
-            <div class="table-title">
-                <h2 class="table-header">Cursos</h2>
-                <button class="file-label add-button" [routerLink]="['/course-add/']">Agregar</button>
-            </div>
-            <table class="table table-striped" *ngIf="course">
-                <thead>
-                    <tr>
-                        <th class="header-cell">Siglas</th>
-                        <th class="header-cell">Nombre</th>
-                        <th class="header-cell">Profesor</th>
-                        <th class="header-cell">Ciclo</th>
-                        <th class="header-cell">Comentarios</th>
-                        <th class="header-cell">Acciones</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let c of course; let i = index">
-                        <td>{{ c.id }}</td>
-                        <td>{{ c.name }}</td>
-                        <td>{{ c.ProfesorId }}</td>
-                        <td>{{ c.cycle }}</td>
-                        <td class="action-buttons">
-                            <a class="action-link" [routerLink]="['/course-comments-list/', c.id]">comentarios</a>
-
-                        </td>
-                        <td class="action-buttons">
-                            <a class="action-link" [routerLink]="['/course-details/', c.id]"> Ver </a>
-                            <a class="action-link" [routerLink]="['/course-edit/', c.id]"> Editar </a>
-                            <a class="action-link delete-link" (click)="delete(c.id)"> Eliminar </a>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
+<div class="table-wrapper">
+  <div class="table-title">
+    <h2 class="table-header">Cursos</h2>
+    <button class="file-label add-button" [routerLink]="['/course-add']">Agregar</button>
+  </div>
+  <table class="table table-striped" *ngIf="courses.length > 0; else noCourses">
+    <thead>
+      <tr>
+        <th class="header-cell">Siglas</th>
+        <th class="header-cell">Nombre</th>
+        <th class="header-cell">Profesor</th>
+        <th class="header-cell">Ciclo</th>
+        <th class="header-cell">Descripción</th>
+        <th class="header-cell">Semestre</th>
+        <th class="header-cell">Cupo</th>
+        <th class="header-cell">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let c of courses; let i = index">
+        <td>{{ c.acronym }}</td>
+        <td>{{ c.name }}</td>
+        <td>{{ c.id_Professor }}</td>
+        <td>{{ c.cycle }}</td>
+        <td>{{ c.description }}</td>
+        <td>{{ c.semester }}</td>
+        <td>{{ c.quota }}</td>
+        <td class="action-buttons">
+          <a class="action-link" [routerLink]="['/course-comment-list/', c.acronym]">Comentarios</a>
+        </td>
+        <td class="action-buttons">
+          <a class="action-link" [routerLink]="['/course-details/', c.acronym]"> Ver </a>
+          <a class="action-link" [routerLink]="['/course-edit/', c.acronym]"> Editar </a>
+          <a class="action-link delete-link" (click)="delete(c.acronym)"> Eliminar </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <ng-template #noCourses>
+    <p>No hay cursos disponibles.</p>
+  </ng-template>
+</div>

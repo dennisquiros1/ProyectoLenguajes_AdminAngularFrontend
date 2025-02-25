@@ -1,44 +1,44 @@
 <body>
     <form class="form-group form-style">
-        <h1>Detalles del curso</h1>
-
-        <div class="form-group row">
-            <label class="control-label col-md-12">Siglas: </label>
-            <div class="col-md-4">
-                <label class="form-data-label">{{ course.acronym }}</label>
-            </div>
+      <h1>Detalles del curso</h1>
+  
+      <div class="form-group row">
+        <label class="control-label col-md-12">Siglas: </label>
+        <div class="col-md-4">
+          <label class="form-data-label">{{ course.acronym }}</label>
         </div>
-
-        <div class="form-group row">
-            <label class="control-label col-md-12">Nombre: </label>
-            <div class="col-md-4">
-                <label class="form-data-label">{{ course.name }}</label>
-            </div>
+      </div>
+  
+      <div class="form-group row">
+        <label class="control-label col-md-12">Nombre: </label>
+        <div class="col-md-4">
+          <label class="form-data-label">{{ course.name }}</label>
         </div>
-
-        <div class="form-group row">
-            <label class="control-label col-md-12">Ciclo: </label>
-            <div class="col-md-4">
-                <label class="form-data-label">{{ course.cycle }}</label>
-            </div>
+      </div>
+  
+      <div class="form-group row">
+        <label class="control-label col-md-12">Ciclo: </label>
+        <div class="col-md-4">
+          <label class="form-data-label">{{ course.cycle }}</label>
         </div>
-
-        <div class="form-group row">
-            <label class="control-label col-md-12">Profesor: </label>
-            <div class="col-md-4">
-                <label class="form-data-label">{{ course.professor }}</label>
-            </div>
+      </div>
+  
+      <div class="form-group row">
+        <label class="control-label col-md-12">Profesor: </label>
+        <div class="col-md-4">
+          <label class="form-data-label">{{ professorName }}</label>
         </div>
-
-        <div class="form-group row">
-            <label class="control-label col-md-12">Descripción: </label>
-            <div class="col-md-4">
-                <label class="form-data-label">{{ course.description }}</label>
-            </div>
+      </div>
+  
+      <div class="form-group row">
+        <label class="control-label col-md-12">Descripción: </label>
+        <div class="col-md-4">
+          <label class="form-data-label">{{ course.description }}</label>
         </div>
-
-        <div class="form-group">
-            <button type="button" class="btn" [routerLink]="['/course-list']">Volver</button>
-        </div>
+      </div>
+  
+      <div class="form-group">
+        <button type="button" class="btn" [routerLink]="['/course-list']">Volver</button>
+      </div>
     </form>
-</body>
+  </body>

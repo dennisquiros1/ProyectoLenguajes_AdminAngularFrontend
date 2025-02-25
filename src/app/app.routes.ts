@@ -39,7 +39,7 @@ export const routes: Routes = [
     { path: 'course-details/:id', component: CourseDetailsComponent}, 
     { path: 'course-edit/:id', component:CourseEditComponent},
     //Course-comment
-    { path: 'course-comment-list/:id', component:CourseCommentListComponent},
+    { path: 'course-comment-list/:id', component: CourseCommentListComponent },
     { path: 'course-comment-details/:id', component:CourseCommentDetailsComponent},
     //home
     { path: 'home', component:HomeComponent},
@@ -63,6 +63,4 @@ export const routes: Routes = [
     { path: 'student-details/:id', component: StudentDetailsComponent },
     //PageNotFound
     { path: '**', component: PageNotFoundComponent}
-
-
 ];
