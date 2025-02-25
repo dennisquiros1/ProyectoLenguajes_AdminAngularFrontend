@@ -21,7 +21,7 @@ export class CourseDetailsComponent implements OnInit {
       this.restService.getCourseById(courseId).subscribe(
         (data) => {
           this.course = data;
-          this.getProfessorName(this.course.professorId);
+          this.getProfessorName(this.course.id_Professor);
         },
         (error) => {
           console.error('Error fetching course details', error);

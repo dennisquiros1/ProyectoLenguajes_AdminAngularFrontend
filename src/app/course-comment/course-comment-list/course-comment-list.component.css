@@ -10,6 +10,11 @@
     margin-bottom: 20px; /* Espacio entre el encabezado y la tabla */
 }
 
+.separated {
+    margin-top: 20px;
+    margin-left: 30px;
+  }
+
 /* Estilo para el título del encabezado */
 .table-header {
     font-size: 24px;
@@ -18,6 +23,41 @@
     color: black;
     margin-left: 1.25rem;
 }
+
+/* Estilo de los botones */
+.btn {
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Botón cancelar */
+.btn {
+    background-color: #f1962e;
+    color: white;
+    border-bottom: 2px solid #f1962e;
+    margin-right: 2rem;
+}
+
+.btn:hover {
+    background-color: #ffff;
+    color:#f1962e;
+    border-bottom: 2px solid #f1962e;
+
+}
+
+
+
+.centered {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 16px;
+    color: #555;
+  }
 
 /* Botón Agregar */
 .add-button {
