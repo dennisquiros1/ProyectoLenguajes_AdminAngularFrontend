@@ -16,8 +16,16 @@ export class LoginComponent {
   lId: string = '';
   lPassword: string = '';
 
-  constructor(private router: Router, private restService: RestService) {}
 
+
+
+  constructor(private router: Router, private restService: RestService, private commService: CommsService) {
+
+    
+
+
+  }
+  
   AuthenticateAdm() {
     const administrator = {
       id: this.lId,
@@ -28,6 +36,7 @@ export class LoginComponent {
       next: (response: any) => {
         if (response.message === 'Authentication successful') {
           this.router.navigate(['/home']);
+          this.commService.triggerShowElementsEvent();
         } else {
           alert('Invalid credentials');
         }
