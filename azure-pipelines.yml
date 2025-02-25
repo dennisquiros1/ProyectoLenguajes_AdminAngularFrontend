@@ -12,7 +12,7 @@ steps:
 - task: Npm@1
   inputs:
     command: 'custom'
-    customCommand: 'run -script build'
+    customCommand: 'run build'
 
 - task: ArchiveFiles@2
   inputs:
